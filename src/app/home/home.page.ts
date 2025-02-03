@@ -10,4 +10,12 @@ export class HomePage {
 
   constructor() {}
 
+  goToCheckout() {
+    // Perform some actions here
+    console.log('Performing some actions before redirecting...');
+    // Redirect to /checkout page
+
+    window.location.href = '/checkout';
+
+  }
 }
