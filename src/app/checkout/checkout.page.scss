@@ -1,31 +1,16 @@
-#container {
-  // text-align: center;
+ion-content {
+  padding: 16px;
+}
 
-  // position: absolute;
-  // left: 0;
-  // right: 0;
-  // top: 50%;
-  // transform: translateY(-50%);
+.section-title {
+  color: #e67e22;
+  margin: 12px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+ion-item {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: "#ff00ff";
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
 }

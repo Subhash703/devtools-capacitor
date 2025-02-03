@@ -1,4 +1,14 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  quantity: number;
+}
+
 
 @Component({
   selector: 'app-home',
@@ -7,15 +17,25 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
+  products: Product[] = [
+    { id: 1, name: 'Product 1', price: 1, description: 'Awesome product description for product', quantity: 1 },
+    { id: 2, name: 'Product 2', price: 1, description: 'Awesome product description for product', quantity: 1 }
+  ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  goToCheckout() {
-    // Perform some actions here
-    console.log('Performing some actions before redirecting...');
-    // Redirect to /checkout page
+  increaseQuantity(product: Product) {
+    product.quantity++;
+  }
 
-    window.location.href = '/checkout';
+  decreaseQuantity(product: Product) {
+    if (product.quantity > 1) {
+      product.quantity--;
+    }
+  }
 
+  goToCart() {
+    console.log('Navigating to cart with:', this.products);
+    this.router.navigate(['/checkout'], { state: { products: this.products } });
   }
 }
